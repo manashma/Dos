@@ -3,10 +3,11 @@ try:
     import argparse
     import sys
     import os
+    from colorama import Fore
     from scapy.all import *
 except Exception as module:
-    print("some modules are not installed\n", module)
-parser = argparse.ArgumentParser(description="Simple DOS tool created by Manash")
+    print(Fore.RED + "some modules are not installed\n", module)
+parser = argparse.ArgumentParser(description= Fore.GREEN + "Simple DOS tool created by Manash")
 parser.add_argument('-i', '--host', type=str, help='Target a IP address')
 parser.add_argument('-p', '--port', type=int, help='Spacify the port number')
 if sys.platform.startswith('win'):
@@ -37,7 +38,7 @@ if sys.platform.startswith('win'):
             with open('C:\\Users\\dos_log.txt', 'w') as log:
                 log.write(f'Not supported module is {modules} , Please installed it first then try again')
                 pass
-            print("Some module not found")
+            print( Fore.RED + "Some module not found")
             quit()
     if __name__ == '__main__':
         attack(arg.host, arg.port, arg.source)
