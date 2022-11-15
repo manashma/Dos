@@ -8,7 +8,7 @@ try:
 except Exception as module:
     print(Fore.RED + "some modules are not installed\n", module)
 parser = argparse.ArgumentParser(description= Fore.GREEN + "Simple DOS tool created by Manash")
-parser.add_argument('-i', '--host', type=str, help='Target a IP address')
+parser.add_argument('-i', '--host', type=str, help='Target an IP address')
 parser.add_argument('-p', '--port', type=int, help='Spacify the port number')
 if sys.platform.startswith('win'):
     os.system("cls")
